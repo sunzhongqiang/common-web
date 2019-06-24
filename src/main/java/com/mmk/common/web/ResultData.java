@@ -82,4 +82,17 @@ public class ResultData implements java.io.Serializable {
     this.statusCode = statusCode;
   }
 
+  public static ResultData SUCCESS(Map<String,Object> data){
+    return new ResultData(true,"",data);
+  }
+
+  /**
+   * 构造错误的结果数据
+   * @param errorMessage 错误的业务信息
+   * @return
+   */
+  public static ResultData ERROR(String errorMessage){
+    return new ResultData(false,errorMessage);
+  }
+
 }
