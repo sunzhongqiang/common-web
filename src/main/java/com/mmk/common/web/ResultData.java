@@ -82,8 +82,9 @@ public class ResultData implements java.io.Serializable {
     this.statusCode = statusCode;
   }
 
-  public void content(Object value){
+  public ResultData content(Object value){
     this.getData().put("content",value);
+    return this;
   }
 
   public static ResultData SUCCESS(){
