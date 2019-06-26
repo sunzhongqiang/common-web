@@ -82,6 +82,14 @@ public class ResultData implements java.io.Serializable {
     this.statusCode = statusCode;
   }
 
+  public static ResultData SUCCESS(){
+    return new ResultData(true,"");
+  }
+
+  public static ResultData SUCCESS(String msg){
+    return new ResultData(true,msg);
+  }
+
   public static ResultData SUCCESS(Map<String,Object> data){
     return new ResultData(true,"",data);
   }
