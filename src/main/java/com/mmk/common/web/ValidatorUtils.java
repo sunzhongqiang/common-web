@@ -9,6 +9,7 @@ public class ValidatorUtils {
    * 校验手机号.
    *
    * @param phone 电话号码
+   * @return 返回是否是手机号码：是:true,否:false
    **/
   public static boolean isPhone(String phone) {
     String regex = "^((13[0-9])|(14[5,7,9])|(15([0-3]|[5-9]))|"
@@ -28,6 +29,9 @@ public class ValidatorUtils {
 
   /**
    * 校验手机号.
+   *
+   * @param phone 电话号码
+   * @return 返回是否是正确的手机
    */
   public static boolean isCorrectPhone(String phone) {
     String regex =
@@ -47,6 +51,9 @@ public class ValidatorUtils {
 
   /**
    * 校验身份证号.
+   *
+   * @param idNum 身份证号码
+   * @return 是否是正确身份证
    */
   public static boolean isCorrectIdcard(String idNum) {
     String regex =
@@ -62,6 +69,7 @@ public class ValidatorUtils {
    * 校验密码.
    *
    * @param pwd 密码
+   * @return 密码是否合规
    */
   public static boolean checkPassword(String pwd) {
 
@@ -75,11 +83,11 @@ public class ValidatorUtils {
    * 校验用户昵称.
    *
    * @param nickname 用户昵称
+   * @return 用户名是否合规
    */
   public static boolean checkNickname(String nickname) {
     // 请输入2-20个字符，内容包括中英文、数字和“_”符号。
     String regStr = "^[0-9A-Za-z_\\u4e00-\\u9fa5]{2,20}$";// 正则
-
     return nickname.matches(regStr);
   }
 

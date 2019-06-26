@@ -89,7 +89,7 @@ public class ResultData implements java.io.Serializable {
   /**
    * 构造错误的结果数据
    * @param errorMessage 错误的业务信息
-   * @return
+   * @return 返回错误的ResultData实例
    */
   public static ResultData ERROR(String errorMessage){
     return new ResultData(false,errorMessage);
