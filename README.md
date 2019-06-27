@@ -9,7 +9,7 @@
 maven { url "http://101.200.215.10:8083/repository/maven-public/" }
 
 dependencies {
-	implementation 'com.mmk:common-web:1.0.6'
+	implementation 'com.mmk:common-web:1.0.7'
 }
 ```
 
