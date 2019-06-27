@@ -5,14 +5,28 @@
 ## 用法
 
 #### gradle
-```
+```groovy
+maven { url "http://101.200.215.10:8083/repository/maven-public/" }
+
 dependencies {
 	implementation 'com.mmk:common-web:1.0.6'
 }
 ```
 
 #### maven
-```
+```xml
+<repository>
+  <id>lcdt</id>
+  <name>lcdt repo</name>
+  <url>http://101.200.215.10:8083/repository/maven-public/</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>false</enabled>
+  </snapshots>
+</repository>
+		
 <dependency>
     <groupId>com.mmk</groupId>
     <artifactId>common-web</artifactId>
