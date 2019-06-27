@@ -16,7 +16,7 @@ dependencies {
 <dependency>
     <groupId>com.mmk</groupId>
     <artifactId>common-web</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 </dependency>
 ```
 
@@ -32,6 +32,8 @@ Page<Trade> tradePage = tradeService.list(tradeDto, pageable);
 return ResultData.SUCCESS("订单列表查询").content(tradePage);
 
 //or 只返回业务数据
+return ResultData.SUCCESS(tradePage);
+//or
 return ResultData.SUCCESS().content(tradePage);
 
 //快速返回错误
@@ -51,10 +53,45 @@ ResultData.SUCCESS(data)
 
 方便获取Web容器中的request，response 和 session
 
+```java
+// 获得Request
+WebUtils.getRequest();
+
+// 获得session
+WebUtils.getSession();
+
+//获得Response
+WebUtils.getResponse();
+
+```
+
 ## SessionUtils
 
-主要是为了获取session 和session中的数值
+主要是为了获取session 和session中的数值,为了方便直接对session进行取值赋值
+
+```java
+SessionUtils.set(key,value)
+
+Object value = SessionUtils.get(key)
+
+String stringValue = SessionUtils.getString(key);
+
+Long longValue = SessionUtils.getLong(key);
+
+...
+
+```
+
+
 
 ## ValidatorUtils
 
 主要是针对web端的参数进行校验的一个工具类
+
+```java
+ValidatorUtils.isCorrectIdcard()  //身份证校验
+ValidatorUtils.isPhone()          // 电话校验
+ValidatorUtils.checkPassword()    //密码是否符合规范
+ValidatorUtils.checkNickname()    //用户名是否符合规范
+
+```
