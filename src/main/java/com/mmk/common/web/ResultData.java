@@ -49,16 +49,18 @@ public class ResultData implements java.io.Serializable {
     return success;
   }
 
-  public void setSuccess(boolean success) {
+  public ResultData setSuccess(boolean success) {
     this.success = success;
+    return this;
   }
 
   public String getMsg() {
     return msg;
   }
 
-  public void setMsg(String msg) {
+  public ResultData setMsg(String msg) {
     this.msg = msg;
+    return this;
   }
 
 
@@ -66,12 +68,14 @@ public class ResultData implements java.io.Serializable {
     return data;
   }
 
-  public void setData(Map<String, Object> data) {
+  public ResultData setData(Map<String, Object> data) {
     this.data = data;
+    return this;
   }
 
-  public void addData(String key, Object value) {
+  public ResultData addData(String key, Object value) {
     this.data.put(key, value);
+    return this;
   }
 
   public String getStatusCode() {
@@ -93,6 +97,11 @@ public class ResultData implements java.io.Serializable {
 
   public static ResultData SUCCESS(String msg){
     return new ResultData(true,msg);
+  }
+
+
+  public static ResultData SUCCESS(Object data){
+    return ResultData.SUCCESS().content(data);
   }
 
   public static ResultData SUCCESS(Map<String,Object> data){
